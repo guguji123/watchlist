@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
 	<title>{{name}}'s world</title>
+	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<link rel="stylesheet" href="{{url_for('static', filename='style.css') }}" type="text/css">
 </head>
 <body>
-	<h1>{{name}}'s world<h1>
-		<p><font size="4">{{movies|length}} Titles</font></p>	
-			<ul><font size="3">
+	<h1>
+		<img alt="Avatar" class="avatar" src="{{url_for('static',filename='images/avatar.png')}}" >
+		{{name}}'s world<h1>
+			<p><font size="5">{{movies|length}} Titles</font></p>	
+			<ul class="movie-list"><font size="3">
 				{%for movie in movies%}
 				<li>{{movie.title}}-{{movie.year}}</li>
 				{%endfor%}
 			</font>
-			</ul>
-	<footer>
-		<small><font size="3">&copy; 2018 <a href="https://www.google.com/">Google</a></font></small>
-	</footer>
+		</ul>
+		<img alt="Walking Totoro" class="totoro" src="{{url_for('static',filename='images/totoro.gif')}}">
+		<footer>
+			<small><font size="3">&copy; 2019 <a href="https://www.google.com/">Google</a></font></small>
+		</footer>
 		
-</body>
-</html>
+	</body>
+	</html>
