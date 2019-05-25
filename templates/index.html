@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>{{name}}'s world</title>
+	<title>{{user.name}}'s world</title>
 	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
 	<link rel="stylesheet" href="{{url_for('static', filename='style.css') }}" type="text/css">
 </head>
 <body>
 	<h1>
 		<img alt="Avatar" class="avatar" src="{{url_for('static',filename='images/avatar.png')}}" >
-		{{name}}'s world<h1>
+		{{user.name}}'s world<h1>
 			<p><font size="5">{{movies|length}} Titles</font></p>	
 			<ul class="movie-list"><font size="3">
 				{%for movie in movies%}
